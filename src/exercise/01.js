@@ -16,6 +16,9 @@ function App() {
   // with a fallback.
   // 💰 try putting it in a few different places and observe how that
   // impacts the user experience.
+
+  const loadGlobe = () => import('../globe')
+
   return (
     <div
       style={{
@@ -27,7 +30,11 @@ function App() {
         padding: '2rem',
       }}
     >
-      <label style={{marginBottom: '1rem'}}>
+      <label
+        style={{marginBottom: '1rem'}}
+        onFocus={loadGlobe}
+        onMouseEnter={loadGlobe}
+      >
         <input
           type="checkbox"
           checked={showGlobe}
